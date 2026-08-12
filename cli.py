@@ -20,6 +20,11 @@ MENU = """
 
 
 def run():
+    """Run the interactive command-line menu.
+
+    Loads saved habits, shows the menu, and handles user choices
+    until they save and exit.
+   """
     tracker = HabitTracker()
     tracker.load(DATA_FILE)
 

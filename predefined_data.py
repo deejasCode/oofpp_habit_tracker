@@ -6,6 +6,15 @@ _FOUR_WEEKS_AGO = _TODAY - timedelta(weeks=4)
 
 
 def _daily_completions(skip_days=()):
+    """Generate one completion per day over 28 days.
+
+    Args:
+        skip_days: Day offsets (0-27) to deliberately leave uncompleted,
+            used to create realistic gaps in the example data.
+
+    Returns:
+        A list of completion timestamps.
+    """
     return [
         _FOUR_WEEKS_AGO + timedelta(days=day, hours=9)
         for day in range(28)
@@ -14,6 +23,14 @@ def _daily_completions(skip_days=()):
 
 
 def _weekly_completions(skip_weeks=()):
+    """Generate one completion per week over 4 weeks.
+
+    Args:
+        skip_weeks: Week offsets (0-3) to deliberately leave uncompleted.
+
+    Returns:
+        A list of completion timestamps.
+    """
     return [
         _FOUR_WEEKS_AGO + timedelta(weeks=week, days=2, hours=15)
         for week in range(4)
@@ -22,6 +39,12 @@ def _weekly_completions(skip_weeks=()):
 
 
 def get_predefined_habits():
+    """Build the 5 predefined habits with 4 weeks of example history.
+
+    Returns:
+        A list of ready-to-use Habit objects, including both daily
+        and weekly habits with realistic completion patterns.
+    """
     return [
         Habit(
             name="Drink 8 glasses of water",
