@@ -38,3 +38,16 @@ def test_longest_streak_overall(habits):
 
 def test_longest_streak_overall_empty_list():
     assert analytics.longest_streak_overall([]) == 0
+
+
+def test_list_habits_by_periodicity_daily(habits):
+    names = analytics.list_habits_by_periodicity(habits, "daily")
+    assert "Drink 8 glasses of water" in names
+    assert "Read 10 pages of a book" in names
+    assert "Workout for 30 minutes" in names
+
+
+def test_list_habits_by_periodicity_weekly(habits):
+    names = analytics.list_habits_by_periodicity(habits, "weekly")
+    assert "Clean apartment" in names
+    assert "Go for a walk" in names

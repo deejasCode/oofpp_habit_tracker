@@ -28,6 +28,22 @@ Option 0 saves your data and exits (stored in `data/habits.json`).
 ```
 python -m pytest tests/ -v
 ```
+## Screenshots
+
+### Running the app
+![Main menu](screenshots/menu.png)
+
+### Analytics: longest streak for a specific habit
+![Streak for Drink 8 glasses of water](screenshots/streak_habit.png)
+
+### Analytics: longest streak overall
+![Overall longest streak](screenshots/streak_overall.png)
+
+### Analytics: filter by periodicity
+![Weekly habits listed](screenshots/filter_by_periodicity.png)
+
+### Test suite passing
+![All tests passing](screenshots/tests.png)
 
 ## Project structure
 - `habit.py` – the `Habit` class (OOP core)
